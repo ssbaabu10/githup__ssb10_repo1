@@ -1,0 +1,15 @@
+name: workflow 02 - ssb20
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '* 0/5 * * *' 
+    #Tring for minutes 
+  workflow_dispatch:
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show the trigger
+        run: echo "Triggered by ${{ github.event_name }}"
